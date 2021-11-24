@@ -90,10 +90,16 @@ func main() {
 				}
 
 				if html {
+					fmt.Println("Stdout:<br />")
 					fmt.Println(strings.ReplaceAll(*output.StandardOutputContent, "\n", "<br />"))
+					fmt.Println("Stderr:<br />")
+					fmt.Println(strings.ReplaceAll(*output.StandardErrorContent, "\n", "<br />"))
 					fmt.Println("<hr />")
 				} else {
+					fmt.Println("Stdout")
 					fmt.Println(*output.StandardOutputContent)
+					fmt.Println("Stderr")
+					fmt.Println(*output.StandardErrorContent)
 				}
 			}
 		}
